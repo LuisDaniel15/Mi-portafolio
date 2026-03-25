@@ -2,24 +2,25 @@
 
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import { Sun, Moon, Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [menuAbierto, setMenuAbierto] = useState(false);
 
-  // Evita errores de hidratación
   useEffect(() => setMounted(true), []);
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
       <nav className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        
-        {/* Logo / Nombre */}
+
+        {/* Logo */}
         <a href="#" className="text-xl font-bold text-gray-900 dark:text-white">
-          Tu Nombre<span className="text-blue-500">.</span>
+          Luis Daniel<span className="text-blue-500">.</span>
         </a>
 
-        {/* Links de navegación */}
+        {/* Links desktop */}
         <ul className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600 dark:text-gray-300">
           <li><a href="#sobre-mi" className="hover:text-blue-500 transition-colors">Sobre mí</a></li>
           <li><a href="#habilidades" className="hover:text-blue-500 transition-colors">Habilidades</a></li>
@@ -27,17 +28,42 @@ export default function Navbar() {
           <li><a href="#contacto" className="hover:text-blue-500 transition-colors">Contacto</a></li>
         </ul>
 
-        {/* Toggle dark/light */}
-        {mounted && (
+        {/* Acciones */}
+        <div className="flex items-center gap-3">
+          {/* Toggle tema */}
+          {mounted && (
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              aria-label="Cambiar tema"
+            >
+              {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+          )}
+
+          {/* Botón menú mobile */}
           <button
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-            aria-label="Cambiar tema"
+            onClick={() => setMenuAbierto(!menuAbierto)}
+            className="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            aria-label="Abrir menú"
           >
-            {theme === 'dark' ? '☀️' : '🌙'}
+            {menuAbierto ? <X size={18} /> : <Menu size={18} />}
           </button>
-        )}
+        </div>
+
       </nav>
+
+      {/* Menú mobile */}
+      {menuAbierto && (
+        <div className="md:hidden border-t border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-gray-900/95 px-6 py-4">
+          <ul className="flex flex-col gap-4 text-sm font-medium text-gray-600 dark:text-gray-300">
+            <li><a href="#sobre-mi" onClick={() => setMenuAbierto(false)} className="hover:text-blue-500 transition-colors">Sobre mí</a></li>
+            <li><a href="#habilidades" onClick={() => setMenuAbierto(false)} className="hover:text-blue-500 transition-colors">Habilidades</a></li>
+            <li><a href="#proyectos" onClick={() => setMenuAbierto(false)} className="hover:text-blue-500 transition-colors">Proyectos</a></li>
+            <li><a href="#contacto" onClick={() => setMenuAbierto(false)} className="hover:text-blue-500 transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 }

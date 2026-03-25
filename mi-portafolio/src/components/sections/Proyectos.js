@@ -1,15 +1,17 @@
 'use client';
 
 import { FadeUp } from '@/components/ui/AnimatedSection';
+import Image from 'next/image';
 
 const proyectos = [
   {
-    titulo: "Proyecto 1",
-    descripcion: "Descripción breve del proyecto. Qué problema resuelve y qué tecnologías usaste.",
-    tecnologias: ["React.js", "Next.js", "Tailwind"],
-    demo: "#",
-    codigo: "#",
-    emoji: "🛒",
+    titulo: "MediCitas",
+    descripcion: "Sistema web para la gestión de citas médicas orientado a consultorios pequeños. Permite administrar pacientes, agenda por doctor y recordatorios de citas.",
+    tecnologias: ["Laravel", "React.js", "Vite", "MySQL"],
+    demo: null,
+    codigo: null,
+    imagen: "/medi-citas.png",
+    badge: "Producto a la venta",
   },
   {
     titulo: "Proyecto 2",
@@ -17,6 +19,7 @@ const proyectos = [
     tecnologias: ["Laravel", "MySQL", "CSS"],
     demo: "#",
     codigo: "#",
+    imagen: null,
     emoji: "📊",
   },
   {
@@ -25,6 +28,7 @@ const proyectos = [
     tecnologias: ["JavaScript", "HTML", "CSS"],
     demo: "#",
     codigo: "#",
+    imagen: null,
     emoji: "🌐",
   },
 ];
@@ -34,6 +38,7 @@ export default function Proyectos() {
     <section id="proyectos" className="py-24 bg-gray-50 dark:bg-gray-800/50 px-6">
       <div className="max-w-5xl mx-auto">
 
+        {/* Título */}
         <FadeUp>
           <div className="mb-12">
             <p className="text-blue-500 font-medium mb-2 tracking-wide">Mi trabajo</p>
@@ -48,9 +53,29 @@ export default function Proyectos() {
           {proyectos.map((proyecto, i) => (
             <FadeUp key={proyecto.titulo} delay={i * 0.15}>
               <div className="flex flex-col bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md hover:border-blue-500 dark:hover:border-blue-500 transition-all overflow-hidden h-full">
-                <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/10 dark:from-blue-500/20 dark:to-blue-600/20 p-8 flex items-center justify-center text-6xl">
-                  {proyecto.emoji}
-                </div>
+
+                {/* Header de la card */}
+                {proyecto.imagen ? (
+                  <div className="relative w-full h-48 overflow-hidden bg-gray-100 dark:bg-gray-900">
+                    <Image
+                      src={proyecto.imagen}
+                      alt={proyecto.titulo}
+                      fill
+                      className="object-contain p-2"
+                    />
+                    {proyecto.badge && (
+                      <span className="absolute top-3 right-3 text-xs px-2 py-1 bg-blue-500 text-white rounded-full font-medium">
+                        {proyecto.badge}
+                      </span>
+                    )}
+                  </div>
+                ) : (
+                  <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/10 dark:from-blue-500/20 dark:to-blue-600/20 p-8 flex items-center justify-center text-6xl">
+                    {proyecto.emoji}
+                  </div>
+                )}
+
+                {/* Contenido */}
                 <div className="p-5 flex flex-col flex-1">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
                     {proyecto.titulo}
@@ -58,6 +83,8 @@ export default function Proyectos() {
                   <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4 flex-1">
                     {proyecto.descripcion}
                   </p>
+
+                  {/* Tecnologías */}
                   <div className="flex flex-wrap gap-2 mb-5">
                     {proyecto.tecnologias.map((tech) => (
                       <span
@@ -68,21 +95,36 @@ export default function Proyectos() {
                       </span>
                     ))}
                   </div>
+
+                  {/* Botones */}
                   <div className="flex gap-3">
-                    
-                    <a  href={proyecto.demo}
-                      className="flex-1 text-center text-sm px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors"
-                    >
-                      Ver demo
-                    </a>
-                    
-                    < a href={proyecto.codigo}
-                      className="flex-1 text-center text-sm px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-500 dark:hover:border-blue-500 dark:hover:text-blue-500 rounded-lg font-medium transition-colors"
-                    >
-                      Código
-                    </a>
+                    {proyecto.demo ? (
+
+                      <a href={proyecto.demo}
+                        className="flex-1 text-center text-sm px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors"
+                      >
+                        Ver demo
+                      </a>
+                    ) : (
+                      <span className="flex-1 text-center text-sm px-4 py-2 bg-blue-500/50 text-white rounded-lg font-medium cursor-default">
+                        Demo privada
+                      </span>
+                    )}
+                    {proyecto.codigo ? (
+
+                      <a href={proyecto.codigo}
+                        className="flex-1 text-center text-sm px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-500 dark:hover:border-blue-500 dark:hover:text-blue-500 rounded-lg font-medium transition-colors"
+                      >
+                        Código
+                      </a>
+                    ) : (
+                      <span className="flex-1 text-center text-sm px-4 py-2 border border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-600 rounded-lg font-medium cursor-default">
+                        Código privado
+                      </span>
+                    )}
                   </div>
                 </div>
+
               </div>
             </FadeUp>
           ))}

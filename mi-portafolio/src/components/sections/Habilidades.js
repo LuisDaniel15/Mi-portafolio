@@ -1,16 +1,20 @@
 'use client';
 
 import { FadeUp } from '@/components/ui/AnimatedSection';
+import {
+  SiHtml5, SiCss, SiJavascript, SiReact,
+  SiNextdotjs, SiLaravel, SiMysql, SiGit
+} from 'react-icons/si';
 
 const habilidades = [
-  { nombre: "HTML", icono: "🌐", nivel: 90, categoria: "Frontend" },
-  { nombre: "CSS", icono: "🎨", nivel: 85, categoria: "Frontend" },
-  { nombre: "JavaScript", icono: "⚡", nivel: 80, categoria: "Frontend" },
-  { nombre: "React.js", icono: "⚛️", nivel: 75, categoria: "Frontend" },
-  { nombre: "Next.js", icono: "▲", nivel: 70, categoria: "Frontend" },
-  { nombre: "Laravel", icono: "🔴", nivel: 75, categoria: "Backend" },
-  { nombre: "MySQL", icono: "🗄️", nivel: 80, categoria: "Backend" },
-  { nombre: "Git", icono: "🔀", nivel: 80, categoria: "Herramientas" },
+  { nombre: "HTML", icono: SiHtml5, nivel: 90, categoria: "Frontend", color: "text-orange-500" },
+  { nombre: "CSS", icono: SiCss, nivel: 85, categoria: "Frontend", color: "text-blue-500" },
+  { nombre: "JavaScript", icono: SiJavascript, nivel: 80, categoria: "Frontend", color: "text-yellow-400" },
+  { nombre: "React.js", icono: SiReact, nivel: 75, categoria: "Frontend", color: "text-cyan-400" },
+  { nombre: "Next.js", icono: SiNextdotjs, nivel: 70, categoria: "Frontend", color: "text-gray-900 dark:text-white" },
+  { nombre: "Laravel", icono: SiLaravel, nivel: 75, categoria: "Backend", color: "text-red-500" },
+  { nombre: "MySQL", icono: SiMysql, nivel: 80, categoria: "Backend", color: "text-blue-600" },
+  { nombre: "Git", icono: SiGit, nivel: 80, categoria: "Herramientas", color: "text-orange-600" },
 ];
 
 export default function Habilidades() {
@@ -29,28 +33,31 @@ export default function Habilidades() {
         </FadeUp>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {habilidades.map((skill, i) => (
-            <FadeUp key={skill.nombre} delay={i * 0.1}>
-              <div className="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:border-blue-500 dark:hover:border-blue-500 transition-colors">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-3xl">{skill.icono}</span>
-                  <div>
-                    <p className="font-semibold text-gray-900 dark:text-white">{skill.nombre}</p>
-                    <p className="text-xs text-gray-400 dark:text-gray-500">{skill.categoria}</p>
+          {habilidades.map((skill, i) => {
+            const Icono = skill.icono;
+            return (
+              <FadeUp key={skill.nombre} delay={i * 0.1}>
+                <div className="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:border-blue-500 dark:hover:border-blue-500 transition-colors">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Icono className={`text-3xl ${skill.color}`} />
+                    <div>
+                      <p className="font-semibold text-gray-900 dark:text-white">{skill.nombre}</p>
+                      <p className="text-xs text-gray-400 dark:text-gray-500">{skill.categoria}</p>
+                    </div>
                   </div>
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                    <div
+                      className="bg-blue-500 h-1.5 rounded-full"
+                      style={{ width: `${skill.nivel}%` }}
+                    ></div>
+                  </div>
+                  <p className="text-xs text-gray-400 dark:text-gray-500 mt-1 text-right">
+                    {skill.nivel}%
+                  </p>
                 </div>
-                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
-                  <div
-                    className="bg-blue-500 h-1.5 rounded-full"
-                    style={{ width: `${skill.nivel}%` }}
-                  ></div>
-                </div>
-                <p className="text-xs text-gray-400 dark:text-gray-500 mt-1 text-right">
-                  {skill.nivel}%
-                </p>
-              </div>
-            </FadeUp>
-          ))}
+              </FadeUp>
+            );
+          })}
         </div>
 
       </div>
