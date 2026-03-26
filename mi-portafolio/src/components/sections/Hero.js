@@ -1,6 +1,10 @@
 'use client';
+import Image from 'next/image';
 
 import { FadeUp, FadeIn } from '@/components/ui/AnimatedSection';
+const perfil = {
+  imagen: "/img-profile.jpeg"
+}
 
 export default function Hero() {
   return (
@@ -35,14 +39,14 @@ export default function Hero() {
           </FadeUp>
           <FadeUp delay={0.5}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              
-               <a href="#proyectos"
+
+              <a href="#proyectos"
                 className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors text-center"
               >
                 Ver proyectos
               </a>
-              
-               <a href="#contacto"
+
+              <a href="#contacto"
                 className="px-6 py-3 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-500 dark:hover:border-blue-500 dark:hover:text-blue-500 font-medium rounded-lg transition-colors text-center"
               >
                 Contáctame
@@ -53,10 +57,15 @@ export default function Hero() {
 
         {/* Avatar */}
         <FadeIn delay={0.4}>
-          <div className="flex-shrink-0">
-            <div className="w-52 h-52 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-6xl font-bold shadow-xl">
-              LJ
-            </div>
+          <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full bg-black from-blue-400 to-black flex items-center justify-center text-white text-6xl font-bold shadow-xl overflow-hidden">
+
+            <Image
+              src={perfil.imagen}
+              alt="Perfil"
+              fill
+              className="object-contain"
+            />
+
           </div>
         </FadeIn>
 

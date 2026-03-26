@@ -7,7 +7,7 @@ import { FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
 const contactos = [
   {
     label: "Email",
-    valor: "tuemail@gmail.com",
+    valor: "jimenezmezaluisdaniel5@gmail.com",
     href: "mailto:tuemail@gmail.com",
     icono: Mail,
     color: "text-blue-500",
@@ -15,7 +15,7 @@ const contactos = [
   },
   {
     label: "LinkedIn",
-    valor: "linkedin.com/in/tuusuario",
+    valor: "linkedin.com/in/luisdaniel5",
     href: "https://linkedin.com/in/tuusuario",
     icono: FaLinkedin,
     color: "text-blue-600",
@@ -23,15 +23,15 @@ const contactos = [
   },
   {
     label: "GitHub",
-    valor: "github.com/tuusuario",
-    href: "https://github.com/tuusuario",
+    valor: "github.com/LuisDaniel15",
+    href: "https://github.com/LuisDaniel15",
     icono: FaGithub,
     color: "text-gray-900 dark:text-white",
     bg: "bg-gray-100 dark:bg-gray-700",
   },
   {
     label: "WhatsApp",
-    valor: "+57 300 000 0000",
+    valor: "+57 3242867103",
     href: "https://wa.me/57300000000",
     icono: FaWhatsapp,
     color: "text-green-500",

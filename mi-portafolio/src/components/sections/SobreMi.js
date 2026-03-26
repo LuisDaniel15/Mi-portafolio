@@ -1,6 +1,14 @@
 'use client';
 
 import { FadeUp } from '@/components/ui/AnimatedSection';
+import { MapPin, Monitor, GraduationCap, Briefcase } from 'lucide-react';
+
+const datos = [
+  { label: "Ubicación", value: "Barranquilla, Colombia", icono: MapPin, color: "text-blue-500" },
+  { label: "Perfil", value: "Full Stack Developer", icono: Monitor, color: "text-purple-500" },
+  { label: "Formación", value: "Ing. Sistemas y Computación", icono: GraduationCap, color: "text-green-500" },
+  { label: "Disponibilidad", value: "Abierto a oportunidades", icono: Briefcase, color: "text-orange-500" },
+];
 
 export default function SobreMi() {
   return (
@@ -23,7 +31,7 @@ export default function SobreMi() {
               <p>
                 Soy <span className="text-gray-900 dark:text-white font-medium">Luis Daniel Jiménez</span>,
                 técnico en Sistemas Informáticos y estudiante de 6to semestre de Ingeniería de
-                Sistemas y Computación en Barranquilla, Colombia.
+                Sistemas y Computación.
               </p>
               <p>
                 Me desenvuelvo tanto en el <span className="text-blue-500 font-medium">frontend</span> como
@@ -40,20 +48,20 @@ export default function SobreMi() {
           </FadeUp>
 
           <div className="grid grid-cols-2 gap-4">
-            {[
-              { label: "Ubicación", value: "Barranquilla, Colombia", icon: "📍" },
-              { label: "Perfil", value: "Full Stack Developer", icon: "💻" },
-              { label: "Formación", value: "Ing. Sistemas y Computación", icon: "🎓" },
-              { label: "Disponibilidad", value: "Abierto a oportunidades", icon: "✅" },
-            ].map((item, i) => (
-              <FadeUp key={item.label} delay={0.2 + i * 0.1}>
-                <div className="p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
-                  <span className="text-2xl">{item.icon}</span>
-                  <p className="text-xs text-gray-400 dark:text-gray-500 mt-2 mb-1">{item.label}</p>
-                  <p className="text-sm font-medium text-gray-800 dark:text-gray-200">{item.value}</p>
-                </div>
-              </FadeUp>
-            ))}
+            {datos.map((item, i) => {
+              const Icono = item.icono;
+              return (
+                <FadeUp key={item.label} delay={0.2 + i * 0.1}>
+                  <div className="p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:border-blue-500 dark:hover:border-blue-500 transition-colors">
+                    <div className={`w-9 h-9 rounded-lg bg-gray-50 dark:bg-gray-700 flex items-center justify-center mb-3`}>
+                      <Icono size={20} className={item.color} />
+                    </div>
+                    <p className="text-xs text-gray-400 dark:text-gray-500 mb-1">{item.label}</p>
+                    <p className="text-sm font-medium text-gray-800 dark:text-gray-200">{item.value}</p>
+                  </div>
+                </FadeUp>
+              );
+            })}
           </div>
         </div>
 
