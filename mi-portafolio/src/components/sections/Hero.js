@@ -8,7 +8,7 @@ const perfil = {
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 px-6">
+    <section className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 px-6 pt-20">
       <div className="max-w-5xl w-full mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
 
         {/* Texto principal */}
