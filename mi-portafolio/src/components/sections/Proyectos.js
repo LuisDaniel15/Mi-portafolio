@@ -7,22 +7,22 @@ import Image from 'next/image';
 
 const proyectos = [
   {
-    titulo: "Proyecto 2",
-    descripcion: "Descripción breve del proyecto. Qué problema resuelve y qué tecnologías usaste.",
+    titulo: "Sistema de gestión para guarderías",
+    descripcion: "Aplicación web para la administración de niños, control de asistencia y organización interna, enfocada en mejorar la gestión de guarderías.",
     tecnologias: ["Laravel", "MySQL", "CSS"],
     demo: "#",
     codigo: "#",
     imagen: null,
-    emoji: "📊",
+    emoji: "👶",
   },
   {
-    titulo: "Proyecto 3",
-    descripcion: "Descripción breve del proyecto. Qué problema resuelve y qué tecnologías usaste.",
+    titulo: "Sistema de facturación tipo SaaS",
+    descripcion: "Aplicación web para la gestión de clientes, productos y generación de facturas, simulando un modelo de software como servicio.",
     tecnologias: ["JavaScript", "HTML", "CSS"],
     demo: "#",
     codigo: "#",
     imagen: null,
-    emoji: "🌐",
+    emoji: "📊",
   },
 ];
 
