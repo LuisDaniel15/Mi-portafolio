@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Code } from 'lucide-react';
 
 export const metadata = {
   title: "CitaPro – Sistema de gestión clínica",
-  description: "Plataforma web fullstack para la gestión de consultorios médicos.",
+  description: "Sistema de gestión clínica con roles, dashboard y automatización de procesos.",
 };
 
 const funcionalidades = [
@@ -61,10 +61,10 @@ const tecnologias = [
 ];
 
 const decisiones = [
-  "Implementación de control de acceso basado en roles para segmentar funcionalidades según el usuario.",
-  "Separación de frontend y backend para mayor escalabilidad.",
-  "Uso de dashboards dinámicos según el rol del usuario.",
-  "Automatización de notificaciones para mejorar la asistencia a citas.",
+  "Implementación de control de acceso basado en roles.",
+  "Separación de frontend y backend para escalabilidad.",
+  "Dashboards dinámicos según el rol del usuario.",
+  "Automatización de notificaciones para mejorar asistencia a citas.",
 ];
 
 const credenciales = [
@@ -77,7 +77,7 @@ export default function CitaProPage() {
   return (
     <main className="bg-white dark:bg-gray-900 min-h-screen">
 
-      {/* Navbar simple */}
+      {/* Navbar */}
       <header className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
         <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors text-sm font-medium">
@@ -85,7 +85,7 @@ export default function CitaProPage() {
             Volver al portafolio
           </Link>
           
-          <a href="https://tu-url-render.com"
+          <a  href="https://tu-url-render.com"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors"
@@ -98,78 +98,86 @@ export default function CitaProPage() {
 
       <div className="pt-24 pb-20">
 
-        {/* Hero */}
+        {/* HERO */}
         <section className="max-w-5xl mx-auto px-6 py-16 text-center">
-          <span className="inline-block text-xs font-medium px-3 py-1 bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded-full mb-6">
-            Producto a la venta
+          <span className="inline-block text-xs font-medium px-3 py-1 bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded-full mb-6 border border-blue-100 dark:border-blue-500/20">
+            Sistema real • Fullstack
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
-            CitaPro
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
+            Sistema de gestión <br className="hidden md:block" />
+            <span className="text-blue-500">clínica completo</span>
           </h1>
-          <p className="text-xl text-blue-500 font-medium mb-6">
-            Sistema de gestión clínica
+          <p className="text-xl text-gray-400 dark:text-gray-500 font-medium mb-6">
+            CitaPro
           </p>
           <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Plataforma web fullstack para la gestión de consultorios médicos, que permite administrar 
-            pacientes, citas y documentos clínicos, con automatización de procesos.
+            Plataforma desarrollada para optimizar la operación de consultorios médicos,
+            gestionando pacientes, citas y documentos con automatización de procesos.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             
             <a  href="https://tu-url-render.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors">
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors"
+            >
+              <ExternalLink size={16} />
               Ver demo
             </a>
-            <span className="px-6 py-3 border border-gray-300 dark:border-gray-700 text-gray-500 dark:text-gray-400 font-medium rounded-lg cursor-default">
-              Código disponible bajo solicitud
+            <span className="flex items-center justify-center gap-2 px-6 py-3 border border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 font-medium rounded-lg cursor-default">
+              <Code size={16} />
+              Código bajo solicitud
             </span>
           </div>
         </section>
 
         {/* Imagen principal */}
-        <section className="max-w-5xl mx-auto px-6 mb-20">
-          <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-lg">
+        <section className="max-w-5xl mx-auto px-6 mb-24">
+          <div className="relative w-full h-72 md:h-[480px] rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-xl bg-gray-50 dark:bg-gray-800">
             <Image
               src="/medicitas.png"
-              alt="CitaPro Dashboard"
+              alt="Dashboard CitaPro"
               fill
-              className="object-contain bg-gray-50 dark:bg-gray-800"
+              className="object-contain p-2"
             />
           </div>
         </section>
 
-        {/* Problema que resuelve */}
-        <section className="max-w-5xl mx-auto px-6 mb-20">
+        {/* Problema + Valor */}
+        <section className="max-w-5xl mx-auto px-6 mb-24 grid md:grid-cols-2 gap-6">
           <div className="bg-blue-50 dark:bg-blue-500/10 rounded-2xl p-8 border border-blue-100 dark:border-blue-500/20">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              🧠 Problema que resuelve
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Muchos consultorios pequeños gestionan sus citas y pacientes de forma manual o con herramientas 
-              poco integradas, lo que genera desorganización, pérdida de información y errores en la atención. 
-              CitaPro centraliza toda la gestión en una sola plataforma, permitiendo un mejor control de la 
-              operación y mejorando la experiencia tanto del personal como de los pacientes.
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">🧠 Problema</h2>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
+              Muchos consultorios gestionan citas manualmente, generando errores y desorganización.
+              CitaPro centraliza toda la operación en una sola plataforma.
+            </p>
+          </div>
+          <div className="bg-green-50 dark:bg-green-500/10 rounded-2xl p-8 border border-green-100 dark:border-green-500/20">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">💡 Valor</h2>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
+              Reduce la gestión manual, mejora la organización y automatiza la comunicación con pacientes.
             </p>
           </div>
         </section>
 
         {/* Funcionalidades */}
-        <section className="max-w-5xl mx-auto px-6 mb-20">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-            🚀 Funcionalidades principales
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <section className="max-w-5xl mx-auto px-6 mb-24">
+          <div className="mb-8">
+            <p className="text-blue-500 font-medium mb-2 text-sm tracking-wide">Qué puede hacer</p>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">🚀 Funcionalidades</h2>
+            <div className="mt-3 w-12 h-1 bg-blue-500 rounded"></div>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5">
             {funcionalidades.map((f) => (
               <div
                 key={f.titulo}
-                className="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700"
+                className="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
               >
-                <div className="text-2xl mb-3">{f.icono}</div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">{f.titulo}</h3>
+                <span className="text-2xl mb-3 block">{f.icono}</span>
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">{f.titulo}</h3>
                 <ul className="space-y-1">
                   {f.items.map((item) => (
-                    <li key={item} className="text-sm text-gray-500 dark:text-gray-400 flex items-start gap-2">
+                    <li key={item} className="text-xs text-gray-500 dark:text-gray-400 flex items-start gap-2">
                       <span className="text-blue-500 mt-0.5">•</span>
                       {item}
                     </li>
@@ -181,17 +189,19 @@ export default function CitaProPage() {
         </section>
 
         {/* Roles */}
-        <section className="max-w-5xl mx-auto px-6 mb-20">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-            🔐 Sistema de roles
-          </h2>
+        <section className="max-w-5xl mx-auto px-6 mb-24">
+          <div className="mb-8">
+            <p className="text-blue-500 font-medium mb-2 text-sm tracking-wide">Control de acceso</p>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">🔐 Sistema de roles</h2>
+            <div className="mt-3 w-12 h-1 bg-blue-500 rounded"></div>
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {roles.map((rol) => (
               <div
                 key={rol.nombre}
-                className="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 text-center"
+                className="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 text-center hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
               >
-                <div className="text-3xl mb-2">{rol.icono}</div>
+                <span className="text-3xl mb-2 block">{rol.icono}</span>
                 <p className="font-semibold text-gray-900 dark:text-white text-sm mb-1">{rol.nombre}</p>
                 <p className="text-xs text-gray-500 dark:text-gray-400">{rol.descripcion}</p>
               </div>
@@ -199,18 +209,33 @@ export default function CitaProPage() {
           </div>
         </section>
 
+        {/* Mi rol */}
+        <section className="max-w-5xl mx-auto px-6 mb-24">
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 flex flex-col md:flex-row items-start md:items-center gap-4">
+            <span className="text-4xl">👨‍💻</span>
+            <div>
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Mi rol</h2>
+              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                Desarrollo completo del sistema — arquitectura, diseño de base de datos, sistema de roles, automatización de emails y despliegue.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Tecnologías */}
-        <section className="max-w-5xl mx-auto px-6 mb-20">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-            🛠️ Tecnologías
-          </h2>
+        <section className="max-w-5xl mx-auto px-6 mb-24">
+          <div className="mb-8">
+            <p className="text-blue-500 font-medium mb-2 text-sm tracking-wide">Stack utilizado</p>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">🛠️ Tecnologías</h2>
+            <div className="mt-3 w-12 h-1 bg-blue-500 rounded"></div>
+          </div>
           <div className="flex flex-wrap gap-3">
             {tecnologias.map((t) => (
               <div
                 key={t.area}
-                className="px-4 py-2 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
+                className="px-4 py-3 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700"
               >
-                <span className="text-xs text-gray-400 dark:text-gray-500">{t.area}: </span>
+                <span className="text-xs text-gray-400 dark:text-gray-500 block mb-0.5">{t.area}</span>
                 <span className="text-sm font-medium text-gray-800 dark:text-gray-200">{t.stack}</span>
               </div>
             ))}
@@ -218,88 +243,72 @@ export default function CitaProPage() {
         </section>
 
         {/* Credenciales */}
-        <section className="max-w-5xl mx-auto px-6 mb-20">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-            🔑 Credenciales de prueba
-          </h2>
+        <section className="max-w-5xl mx-auto px-6 mb-24">
+          <div className="mb-8">
+            <p className="text-blue-500 font-medium mb-2 text-sm tracking-wide">Para la demo</p>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">🔑 Credenciales de prueba</h2>
+            <div className="mt-3 w-12 h-1 bg-blue-500 rounded"></div>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {credenciales.map((c) => (
               <div
                 key={c.rol}
                 className="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 font-mono"
               >
-                <p className="text-xs text-blue-500 font-semibold mb-3">{c.rol}</p>
+                <p className="text-xs text-blue-500 font-semibold mb-3 not-italic">{c.rol}</p>
                 <p className="text-sm text-gray-600 dark:text-gray-400">{c.email}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{c.password}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-500">{c.password}</p>
               </div>
             ))}
           </div>
-        </section>
-
-        {/* Nota técnica */}
-        <section className="max-w-5xl mx-auto px-6 mb-20">
-          <div className="bg-yellow-50 dark:bg-yellow-500/10 rounded-2xl p-6 border border-yellow-200 dark:border-yellow-500/20">
-            <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-              ⚠️ Nota técnica
-            </h2>
-            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-              El sistema de envío de correos funciona completamente en entorno local mediante workers. 
+          <div className="mt-4 p-4 bg-yellow-50 dark:bg-yellow-500/10 rounded-xl border border-yellow-200 dark:border-yellow-500/20">
+            <p className="text-xs text-yellow-700 dark:text-yellow-400 leading-relaxed">
+              ⚠️ El sistema de envío de correos funciona completamente en entorno local mediante workers.
               En el despliegue en Render (plan gratuito), esta funcionalidad se encuentra limitada.
             </p>
           </div>
         </section>
 
         {/* Decisiones técnicas */}
-        <section className="max-w-5xl mx-auto px-6 mb-20">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-            🧠 Decisiones técnicas
-          </h2>
+        <section className="max-w-5xl mx-auto px-6 mb-24">
+          <div className="mb-8">
+            <p className="text-blue-500 font-medium mb-2 text-sm tracking-wide">Por qué se hizo así</p>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">🧠 Decisiones técnicas</h2>
+            <div className="mt-3 w-12 h-1 bg-blue-500 rounded"></div>
+          </div>
           <div className="space-y-3">
             {decisiones.map((d, i) => (
               <div key={i} className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
-                <span className="text-blue-500 font-bold mt-0.5">→</span>
+                <span className="text-blue-500 font-bold mt-0.5 shrink-0">→</span>
                 <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{d}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Resultado */}
-        <section className="max-w-5xl mx-auto px-6 mb-20">
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              🎯 Resultado
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              CitaPro permite digitalizar la operación de consultorios médicos, reduciendo la gestión 
-              manual y mejorando la organización de citas, pacientes y documentos clínicos.
-            </p>
-          </div>
-        </section>
-
         {/* CTA Final */}
-        <section className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            ¿Te interesa CitaPro?
-          </h2>
-          <p className="text-gray-500 dark:text-gray-400 mb-8">
-            Puedo adaptarlo a las necesidades de tu consultorio.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            
-            <a  href="https://tu-url-render.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors"
-            >
-              Ver demo
-            </a>
-            <Link
-              href="/#contacto"
-              className="px-6 py-3 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-500 dark:hover:border-blue-500 dark:hover:text-blue-500 font-medium rounded-lg transition-colors"
-            >
-              Contactarme
-            </Link>
+        <section className="max-w-5xl mx-auto px-6">
+          <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-10 text-center shadow-lg">
+            <h2 className="text-2xl font-bold text-white mb-3">¿Te interesa CitaPro?</h2>
+            <p className="text-blue-100 mb-8 text-sm">
+              Puedo adaptarlo a las necesidades de tu consultorio.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              
+              <a  href="https://tu-url-render.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-white text-blue-500 hover:bg-blue-50 font-medium rounded-lg transition-colors"
+              >
+                Ver demo
+              </a>
+              <Link
+                href="/#contacto"
+                className="px-6 py-3 border border-white/40 text-white hover:bg-white/10 font-medium rounded-lg transition-colors"
+              >
+                Contactarme
+              </Link>
+            </div>
           </div>
         </section>
 
