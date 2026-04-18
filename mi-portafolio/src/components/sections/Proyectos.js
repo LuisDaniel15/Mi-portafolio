@@ -5,14 +5,16 @@ import Image from 'next/image';
 
 const proyectos = [
   {
-    titulo: "MediCitas",
-    descripcion: "Sistema web para la gestión de citas médicas orientado a consultorios pequeños. Permite administrar pacientes, agenda por doctor y recordatorios de citas.",
-    tecnologias: ["Laravel", "React.js", "Vite", "MySQL"],
-    demo: null,
-    codigo: null,
+    titulo: "CitaPro",
+    subtitulo: "Sistema de gestión clínica",
+    descripcion: "Plataforma web para gestión de pacientes, citas y documentos médicos con roles y automatización.",
+    tecnologias: ["Laravel", "Next.js", "MySQL"],
+    demo: "https://tu-url-render.com",
+    verMas: "/proyectos/citapro",
     imagen: "/medi-citas.png",
     badge: "Producto a la venta",
   },
+  // imagen: "/medi-citas.png",
   {
     titulo: "Proyecto 2",
     descripcion: "Descripción breve del proyecto. Qué problema resuelve y qué tecnologías usaste.",
@@ -98,29 +100,28 @@ export default function Proyectos() {
 
                   {/* Botones */}
                   <div className="flex gap-3">
-                    {proyecto.demo ? (
+                    {proyecto.demo && (
 
                       <a href={proyecto.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex-1 text-center text-sm px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors"
                       >
                         Ver demo
                       </a>
-                    ) : (
-                      <span className="flex-1 text-center text-sm px-4 py-2 bg-blue-500/50 text-white rounded-lg font-medium cursor-default">
-                        Demo privada
-                      </span>
                     )}
-                    {proyecto.codigo ? (
+                    {proyecto.verMas && (
 
-                      <a href={proyecto.codigo}
+                      <a href={proyecto.verMas}
                         className="flex-1 text-center text-sm px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-500 dark:hover:border-blue-500 dark:hover:text-blue-500 rounded-lg font-medium transition-colors"
                       >
+                        Ver más
+                      </a>
+                    )}
+                    {!proyecto.demo && !proyecto.verMas && proyecto.codigo && (
+                      <a href={proyecto.codigo} className="flex-1 text-center text-sm px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-medium transition-colors">
                         Código
                       </a>
-                    ) : (
-                      <span className="flex-1 text-center text-sm px-4 py-2 border border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-600 rounded-lg font-medium cursor-default">
-                        Código privado
-                      </span>
                     )}
                   </div>
                 </div>
