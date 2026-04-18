@@ -57,8 +57,9 @@ export default function Contacto() {
         <FadeUp delay={0.2}>
           <div className="max-w-2xl mb-12">
             <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-              Estoy disponible para proyectos freelance, oportunidades laborales o simplemente
-              para hablar de tecnología. No dudes en escribirme, con gusto te respondo.
+             ¿Trabajamos juntos? <br/>
+Estoy disponible para oportunidades laborales y proyectos donde pueda aportar desarrollando sistemas web y soluciones completas.
+Puedes contactarme a través de:
             </p>
           </div>
         </FadeUp>

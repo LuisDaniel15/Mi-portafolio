@@ -6,8 +6,12 @@ import { MapPin, Monitor, GraduationCap, Briefcase } from 'lucide-react';
 const datos = [
   { label: "Ubicación", value: "Barranquilla, Colombia", icono: MapPin, color: "text-blue-500" },
   { label: "Perfil", value: "Full Stack Developer", icono: Monitor, color: "text-purple-500" },
-  { label: "Formación", value: "Ing. Sistemas y Computación", icono: GraduationCap, color: "text-green-500" },
-  { label: "Disponibilidad", value: "Abierto a oportunidades", icono: Briefcase, color: "text-orange-500" },
+  {
+    label: "Formación",
+    value: "Técnico en Sistemas Informáticos · Ingeniería de Sistemas y Computación (En curso)",
+    icono: GraduationCap,
+    color: "text-green-500"
+  }, { label: "Disponibilidad", value: "Abierto a oportunidades", icono: Briefcase, color: "text-orange-500" },
 ];
 
 export default function SobreMi() {
@@ -29,20 +33,16 @@ export default function SobreMi() {
           <FadeUp delay={0.2}>
             <div className="space-y-5 text-gray-600 dark:text-gray-400 leading-relaxed">
               <p>
-                Soy <span className="text-gray-900 dark:text-white font-medium">Luis Daniel Jiménez</span>,
-                técnico en Sistemas Informáticos y estudiante de 6to semestre de Ingeniería de
-                Sistemas y Computación.
+                Soy desarrollador fullstack enfocado en la creación de sistemas de gestión y aplicaciones web completas.
               </p>
               <p>
-                Me desenvuelvo tanto en el <span className="text-blue-500 font-medium">frontend</span> como
-                en el <span className="text-blue-500 font-medium">backend</span>, lo que me permite
-                entender y construir proyectos web de principio a fin — desde la interfaz que
-                ve el usuario hasta la lógica del servidor y la base de datos.
+                Tengo experiencia construyendo soluciones que integran frontend, backend y bases de datos, permitiendo desarrollar aplicaciones funcionales de principio a fin, desde la interfaz del usuario hasta la lógica del servidor.
               </p>
               <p>
-                Me apasiona escribir código limpio, seguir buenas prácticas y seguir aprendiendo
-                constantemente. Estoy en búsqueda de oportunidades donde pueda aportar valor
-                y seguir creciendo como profesional.
+                Me enfoco en crear software bien estructurado, con control de roles, dashboards dinámicos y automatización de procesos, orientado a resolver necesidades reales de negocio.
+              </p>
+              <p>
+                Actualmente estoy abierto a oportunidades donde pueda aportar valor desarrollando soluciones reales y seguir creciendo como profesional.
               </p>
             </div>
           </FadeUp>

@@ -26,10 +26,10 @@ export default function Hero() {
           </FadeUp>
           <FadeUp delay={0.3}>
             <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 mb-2">
-              Técnico en Sistemas Informáticos
+              Desarrollador Fullstack especializado en sistemas de gestión y automatización
             </p>
             <p className="text-base text-gray-400 dark:text-gray-500 mb-8">
-              Estudiante de Ingeniería de Sistemas y Computación
+              Construyo aplicaciones web completas enfocadas en resolver problemas reales de negocio, integrando frontend, backend y bases de datos.
             </p>
           </FadeUp>
           <FadeUp delay={0.4}>

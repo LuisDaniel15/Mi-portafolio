@@ -120,7 +120,7 @@ function CitaProCard() {
         <div className="flex items-center gap-2 mb-3">
           <span className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 bg-green-50 dark:bg-green-500/10 text-green-600 dark:text-green-400 rounded-full border border-green-200 dark:border-green-500/20">
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-            Producto real · SaaS clínico
+            Sistema real • Gestión clínica
           </span>
         </div>
 
