@@ -57,15 +57,13 @@ export default function Hero() {
 
         {/* Avatar */}
         <FadeIn delay={0.4}>
-          <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full bg-black from-blue-400 to-black flex items-center justify-center text-white text-6xl font-bold shadow-xl overflow-hidden">
-
+          <div className="relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full bg-black flex items-center justify-center text-white text-6xl font-bold shadow-xl overflow-hidden">
             <Image
               src={perfil.imagen}
               alt="Perfil"
               fill
               className="object-contain"
             />
-
           </div>
         </FadeIn>
 
