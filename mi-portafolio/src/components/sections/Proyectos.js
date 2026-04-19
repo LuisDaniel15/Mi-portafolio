@@ -8,19 +8,19 @@ import Image from 'next/image';
 const proyectos = [
   {
     titulo: "Sistema de gestión para guarderías",
-    descripcion: "Aplicación web para la administración de niños, control de asistencia y organización interna, enfocada en mejorar la gestión de guarderías.",
-    tecnologias: ["Laravel", "MySQL", "CSS"],
-    demo: "#",
-    codigo: "#",
+    descripcion: "Aplicación web para la administración de niños, control de asistencia y organización interna de guarderías.",
+    tecnologias: ["Next.js", "FastAPI", "PostgreSQL"],
+    verMas: "/proyectos/guarderia",
+    codigo: "https://github.com/tuusuario/guarderia",
     imagen: null,
     emoji: "👶",
   },
   {
     titulo: "Sistema de facturación tipo SaaS",
-    descripcion: "Aplicación web para la gestión de clientes, productos y generación de facturas, simulando un modelo de software como servicio.",
-    tecnologias: ["JavaScript", "HTML", "CSS"],
-    demo: "#",
-    codigo: "#",
+    descripcion: "Aplicación web para la gestión de clientes, productos y generación de facturas.",
+    tecnologias: ["Laravel", "MySQL", "JavaScript"],
+    verMas: "/proyectos/facturacion",
+    codigo: "https://github.com/tuusuario/facturacion",
     imagen: null,
     emoji: "📊",
   },
@@ -70,12 +70,24 @@ export default function Proyectos() {
                     ))}
                   </div>
                   <div className="flex gap-3">
-                    <a href={proyecto.demo} className="flex-1 text-center text-sm px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors">
-                      Ver demo
-                    </a>
-                    <a href={proyecto.codigo} className="flex-1 text-center text-sm px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-500 rounded-lg font-medium transition-colors">
-                      Código
-                    </a>
+                    {proyecto.verMas && (
+                      <Link
+                        href={proyecto.verMas}
+                        className="flex-1 text-center text-sm px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors"
+                      >
+                        Ver más
+                      </Link>
+                    )}
+                    {proyecto.codigo && (
+
+                      <a href={proyecto.codigo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 text-center text-sm px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-500 dark:hover:border-blue-500 dark:hover:text-blue-500 rounded-lg font-medium transition-colors"
+                      >
+                        Ver código
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -101,8 +113,8 @@ function CitaProCard() {
           className="object-contain p-2 transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-blue-600/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          
-          <a  href="https://tu-url-render.com"
+
+          <a href="https://tu-url-render.com"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-5 py-2.5 bg-white text-blue-600 font-semibold rounded-lg text-sm shadow-lg hover:bg-blue-50 transition-colors"
@@ -162,8 +174,8 @@ function CitaProCard() {
 
         {/* Botones */}
         <div className="flex gap-3 mt-auto">
-          
-          <a  href="https://tu-url-render.com"
+
+          <a href="https://tu-url-render.com"
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 flex items-center justify-center gap-2 text-sm px-4 py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors"

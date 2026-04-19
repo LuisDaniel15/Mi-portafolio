@@ -46,10 +46,11 @@ export default function Hero() {
                 Ver proyectos
               </a>
 
-              <a href="#contacto"
+              <a href="/cv-luis-daniel.pdf"
+                download
                 className="px-6 py-3 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-500 dark:hover:border-blue-500 dark:hover:text-blue-500 font-medium rounded-lg transition-colors text-center"
               >
-                Contáctame
+                Descargar CV
               </a>
             </div>
           </FadeUp>
