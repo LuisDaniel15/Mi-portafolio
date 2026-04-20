@@ -135,7 +135,7 @@ export default function CitaProPage() {
         <section className="max-w-5xl mx-auto px-6 mb-24">
           <div className="relative w-full h-72 md:h-[480px] rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-xl bg-gray-50 dark:bg-gray-800">
             <Image
-              src="/medicitas.png"
+              src="/medi-citas.png"
               alt="Dashboard CitaPro"
               fill
               className="object-contain p-2"

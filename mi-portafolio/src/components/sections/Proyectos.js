@@ -11,7 +11,7 @@ const proyectos = [
     descripcion: "Aplicación web para la administración de niños, control de asistencia y organización interna de guarderías.",
     tecnologias: ["Next.js", "FastAPI", "PostgreSQL"],
     verMas: "/proyectos/guarderia",
-    codigo: "https://github.com/tuusuario/guarderia",
+    codigo: "https://github.com/LuisDaniel15/Guarderia-v2",
     imagen: null,
     emoji: "👶",
   },
@@ -144,7 +144,7 @@ function CitaProCard() {
 
         {/* Descripción */}
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">
-          Plataforma fullstack con roles, dashboard dinámico y automatización de citas.
+          Plataforma fullstack con roles, dashboard dinámico y automatización de citas, diseñada para optimizar la gestión de consultorios.
         </p>
 
         {/* Métricas */}
@@ -175,7 +175,7 @@ function CitaProCard() {
         {/* Botones */}
         <div className="flex gap-3 mt-auto">
 
-          <a href="https://tu-url-render.com"
+          <a href="https://software-citas-medicas.onrender.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 flex items-center justify-center gap-2 text-sm px-4 py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors"

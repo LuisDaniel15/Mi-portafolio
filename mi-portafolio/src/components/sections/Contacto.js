@@ -32,7 +32,7 @@ const contactos = [
   {
     label: "WhatsApp",
     valor: "+57 3242867103",
-    href: "https://wa.me/57300000000",
+    href: "https://wa.me/573242867103",
     icono: FaWhatsapp,
     color: "text-green-500",
     bg: "bg-green-50 dark:bg-green-500/10",
