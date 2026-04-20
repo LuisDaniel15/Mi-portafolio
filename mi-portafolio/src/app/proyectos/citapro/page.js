@@ -68,9 +68,9 @@ const decisiones = [
 ];
 
 const credenciales = [
-  { rol: "Admin", email: "admin@test.com", password: "123456" },
-  { rol: "Médico", email: "medico@test.com", password: "123456" },
-  { rol: "Paciente", email: "paciente@test.com", password: "123456" },
+  { rol: "Admin", email: "admin@consultorio.com", password: "Admin1234!" },
+  { rol: "Médico", email: "medico@consultorio.com", password: "Medico1234!" },
+  { rol: "Paciente", email: "paciente@consultorio.com", password: "Paciente1234!" },
 ];
 
 export default function CitaProPage() {
@@ -85,7 +85,7 @@ export default function CitaProPage() {
             Volver al portafolio
           </Link>
           
-          <a  href="https://tu-url-render.com"
+          <a  href="https://software-citas-medicas.onrender.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors"
@@ -116,7 +116,7 @@ export default function CitaProPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             
-            <a  href="https://tu-url-render.com"
+            <a  href="https://software-citas-medicas.onrender.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors"
