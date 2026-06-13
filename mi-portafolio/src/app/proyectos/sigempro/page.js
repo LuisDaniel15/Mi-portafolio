@@ -3,45 +3,55 @@ import Image from 'next/image';
 import { ArrowLeft, ExternalLink, Code } from 'lucide-react';
 
 export const metadata = {
-  title: "CitaPro – Sistema de gestión clínica",
-  description: "Sistema de gestión clínica con roles, dashboard y automatización de procesos.",
+  title: "SigemPro — Plataforma SaaS de gestión clínica",
+  description: "Plataforma SaaS multi-tenancy para consultorios médicos y odontológicos.",
 };
 
 const funcionalidades = [
   {
     icono: "👥",
     titulo: "Gestión de pacientes",
-    items: ["Registro y consulta de pacientes", "Visualización de información y documentos"],
+    items: ["Registro completo de pacientes", "Historial de información", "Búsqueda rápida por nombre o documento"],
   },
   {
     icono: "📅",
-    titulo: "Gestión de citas",
-    items: ["Creación y administración de citas", "Estados de citas (pendiente, atendida, cancelada)"],
+    titulo: "Agenda del profesional",
+    items: ["Visualización de citas", "Organización diaria de la atención", "Control de disponibilidad"],
+  },
+  {
+    icono: "🗓️",
+    titulo: "Programación de citas",
+    items: ["Creación y seguimiento de citas", "Estados de atención", "Gestión de cancelaciones"],
+  },
+  {
+    icono: "🕐",
+    titulo: "Gestión de horarios",
+    items: ["Configuración de horarios por profesional", "Control de disponibilidad"],
   },
   {
     icono: "🩺",
-    titulo: "Gestión de médicos",
-    items: ["Múltiples médicos con horarios independientes"],
-  },
-  {
-    icono: "👤",
-    titulo: "Portal de pacientes",
-    items: ["Agendar citas", "Ver historial de citas", "Acceder a documentos médicos"],
+    titulo: "Historias clínicas digitales",
+    items: ["Registro clínico organizado", "Acceso rápido a información del paciente", "Historia clínica con ordinograma FDI"],
   },
   {
     icono: "📂",
-    titulo: "Gestión de documentos",
-    items: ["Subida de documentos clínicos por médicos", "Acceso seguro por paciente"],
+    titulo: "Documentos médicos",
+    items: ["Generación de historia clínica", "Fórmula de medicamentos", "Almacenamiento centralizado"],
+  },
+  {
+    icono: "🧾",
+    titulo: "Facturación local",
+    items: ["Registro y gestión de facturas", "Control administrativo básico"],
   },
   {
     icono: "📊",
-    titulo: "Dashboard dinámico",
-    items: ["Citas del mes, atendidas y canceladas", "Información personalizada según el rol"],
+    titulo: "Dashboard administrativo",
+    items: ["Citas del día y pacientes registrados", "Citas atendidas y canceladas", "Actividad general del consultorio"],
   },
   {
     icono: "🔔",
-    titulo: "Automatización",
-    items: ["Emails de confirmación y cancelación", "Recordatorios 24h antes de la cita"],
+    titulo: "Recordatorios automáticos",
+    items: ["Envío automático por correo electrónico", "Recordatorios antes de cada cita"],
   },
 ];
 
@@ -52,28 +62,38 @@ const roles = [
   { icono: "👤", nombre: "Paciente", descripcion: "Portal personal de citas" },
 ];
 
+const paraQuien = [
+  { icono: "🏥", texto: "Consultorios médicos independientes" },
+  { icono: "🦷", texto: "Consultorios odontológicos" },
+  { icono: "👨‍⚕️", texto: "Especialistas que atienden de forma particular" },
+  { icono: "🏢", texto: "Centros de atención con uno o más profesionales" },
+];
+
 const tecnologias = [
   { area: "Frontend", stack: "Next.js + Tailwind CSS" },
   { area: "Backend", stack: "Laravel" },
   { area: "Base de datos", stack: "PostgreSQL / MySQL" },
   { area: "Autenticación", stack: "Sistema de roles y control de acceso" },
   { area: "Notificaciones", stack: "Emails automatizados" },
+  { area: "Arquitectura", stack: "Multi-tenancy" },
 ];
 
 const decisiones = [
-  "Implementación de control de acceso basado en roles.",
-  "Separación de frontend y backend para escalabilidad.",
-  "Dashboards dinámicos según el rol del usuario.",
-  "Automatización de notificaciones para mejorar asistencia a citas.",
+  "Arquitectura multi-tenancy para aislar los datos de cada consultorio de forma segura.",
+  "Control de acceso basado en roles para segmentar funcionalidades según el usuario.",
+  "Separación de frontend y backend para mayor escalabilidad.",
+  "Dashboards dinámicos según el rol del usuario autenticado.",
+  "Automatización de notificaciones para mejorar la asistencia a citas.",
+  "Historia clínica con ordinograma FDI para soporte odontológico especializado.",
 ];
 
 const credenciales = [
-  { rol: "Admin", email: "admin@consultorio.com", password: "Admin1234!" },
-  { rol: "Médico", email: "medico@consultorio.com", password: "Medico1234!" },
-  { rol: "Paciente", email: "paciente@consultorio.com", password: "Paciente1234!" },
+  { rol: "Admin", email: "admin@test.com", password: "123456" },
+  { rol: "Médico", email: "medico@test.com", password: "123456" },
+  { rol: "Paciente", email: "paciente@test.com", password: "123456" },
 ];
 
-export default function CitaProPage() {
+export default function SigemProPage() {
   return (
     <main className="bg-white dark:bg-gray-900 min-h-screen">
 
@@ -85,7 +105,7 @@ export default function CitaProPage() {
             Volver al portafolio
           </Link>
           
-          <a  href="https://software-citas-medicas.onrender.com/"
+          <a  href="https://tu-url-render.com"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors"
@@ -100,23 +120,23 @@ export default function CitaProPage() {
 
         {/* HERO */}
         <section className="max-w-5xl mx-auto px-6 py-16 text-center">
-          <span className="inline-block text-xs font-medium px-3 py-1 bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded-full mb-6 border border-blue-100 dark:border-blue-500/20">
-            Sistema real • Fullstack
+          <span className="inline-block text-xs font-medium px-3 py-1 bg-green-50 dark:bg-green-500/10 text-green-600 dark:text-green-400 rounded-full mb-6 border border-green-100 dark:border-green-500/20">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse mr-1.5 mb-0.5"></span>
+            SaaS · Multi-tenancy · Programa piloto abierto
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
-            Sistema de gestión <br className="hidden md:block" />
-            <span className="text-blue-500">clínica completo</span>
+            SigemPro
           </h1>
-          <p className="text-xl text-gray-400 dark:text-gray-500 font-medium mb-6">
-            CitaPro
+          <p className="text-xl text-blue-500 font-semibold mb-6">
+            Plataforma SaaS de gestión clínica
           </p>
           <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Plataforma desarrollada para optimizar la operación de consultorios médicos,
-            gestionando pacientes, citas y documentos con automatización de procesos.
+            Plataforma diseñada para ayudar a consultorios médicos y odontológicos a organizar la atención
+            de sus pacientes, centralizar la información clínica y optimizar los procesos administrativos del día a día.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             
-            <a  href="https://software-citas-medicas.onrender.com/"
+            <a  href="https://tu-url-render.com"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors"
@@ -135,44 +155,67 @@ export default function CitaProPage() {
         <section className="max-w-5xl mx-auto px-6 mb-24">
           <div className="relative w-full h-72 md:h-[480px] rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-xl bg-gray-50 dark:bg-gray-800">
             <Image
-              src="/medi-citas.png"
-              alt="Dashboard CitaPro"
+              src="/sigempro.png"
+              alt="SigemPro Dashboard"
               fill
               className="object-contain p-2"
             />
           </div>
         </section>
 
-        {/* Problema + Valor */}
-        <section className="max-w-5xl mx-auto px-6 mb-24 grid md:grid-cols-2 gap-6">
+        {/* Problema */}
+        <section className="max-w-5xl mx-auto px-6 mb-24">
           <div className="bg-blue-50 dark:bg-blue-500/10 rounded-2xl p-8 border border-blue-100 dark:border-blue-500/20">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">🧠 Problema</h2>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
-              Muchos consultorios gestionan citas manualmente, generando errores y desorganización.
-              CitaPro centraliza toda la operación en una sola plataforma.
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">🧠 Problema que resuelve</h2>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm mb-4">
+              Muchos consultorios todavía manejan parte de su operación mediante agendas físicas, archivos
+              en papel, hojas de Excel o múltiples herramientas separadas. Esto genera:
             </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {[
+                "Pérdida de tiempo buscando información",
+                "Dificultad para organizar citas y horarios",
+                "Historias clínicas dispersas",
+                "Seguimiento limitado de pacientes",
+                "Procesos administrativos lentos",
+                "Falta de indicadores para tomar decisiones",
+              ].map((p) => (
+                <div key={p} className="flex items-start gap-2 p-3 bg-white dark:bg-gray-800 rounded-lg border border-blue-100 dark:border-blue-500/20">
+                  <span className="text-red-400 mt-0.5 shrink-0">✕</span>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">{p}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="bg-green-50 dark:bg-green-500/10 rounded-2xl p-8 border border-green-100 dark:border-green-500/20">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">💡 Valor</h2>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
-              Reduce la gestión manual, mejora la organización y automatiza la comunicación con pacientes.
-            </p>
+        </section>
+
+        {/* Para quién */}
+        <section className="max-w-5xl mx-auto px-6 mb-24">
+          <div className="mb-8">
+            <p className="text-blue-500 font-medium mb-2 text-sm tracking-wide">Clientes ideales</p>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">🎯 ¿Para quién está diseñado?</h2>
+            <div className="mt-3 w-12 h-1 bg-blue-500 rounded"></div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {paraQuien.map((item) => (
+              <div key={item.texto} className="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 text-center hover:border-blue-500 dark:hover:border-blue-500 transition-colors">
+                <span className="text-3xl mb-3 block">{item.icono}</span>
+                <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">{item.texto}</p>
+              </div>
+            ))}
           </div>
         </section>
 
         {/* Funcionalidades */}
         <section className="max-w-5xl mx-auto px-6 mb-24">
           <div className="mb-8">
-            <p className="text-blue-500 font-medium mb-2 text-sm tracking-wide">Qué puede hacer</p>
+            <p className="text-blue-500 font-medium mb-2 text-sm tracking-wide">Qué incluye</p>
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white">🚀 Funcionalidades</h2>
             <div className="mt-3 w-12 h-1 bg-blue-500 rounded"></div>
           </div>
           <div className="grid md:grid-cols-3 gap-5">
             {funcionalidades.map((f) => (
-              <div
-                key={f.titulo}
-                className="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
-              >
+              <div key={f.titulo} className="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-colors">
                 <span className="text-2xl mb-3 block">{f.icono}</span>
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">{f.titulo}</h3>
                 <ul className="space-y-1">
@@ -197,28 +240,12 @@ export default function CitaProPage() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {roles.map((rol) => (
-              <div
-                key={rol.nombre}
-                className="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 text-center hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
-              >
+              <div key={rol.nombre} className="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 text-center hover:border-blue-500 dark:hover:border-blue-500 transition-colors">
                 <span className="text-3xl mb-2 block">{rol.icono}</span>
                 <p className="font-semibold text-gray-900 dark:text-white text-sm mb-1">{rol.nombre}</p>
                 <p className="text-xs text-gray-500 dark:text-gray-400">{rol.descripcion}</p>
               </div>
             ))}
-          </div>
-        </section>
-
-        {/* Mi rol */}
-        <section className="max-w-5xl mx-auto px-6 mb-24">
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 flex flex-col md:flex-row items-start md:items-center gap-4">
-            <span className="text-4xl">👨‍💻</span>
-            <div>
-              <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Mi rol</h2>
-              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                Desarrollo completo del sistema — arquitectura, diseño de base de datos, sistema de roles, automatización de emails y despliegue.
-              </p>
-            </div>
           </div>
         </section>
 
@@ -231,10 +258,7 @@ export default function CitaProPage() {
           </div>
           <div className="flex flex-wrap gap-3">
             {tecnologias.map((t) => (
-              <div
-                key={t.area}
-                className="px-4 py-3 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700"
-              >
+              <div key={t.area} className="px-4 py-3 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
                 <span className="text-xs text-gray-400 dark:text-gray-500 block mb-0.5">{t.area}</span>
                 <span className="text-sm font-medium text-gray-800 dark:text-gray-200">{t.stack}</span>
               </div>
@@ -251,11 +275,8 @@ export default function CitaProPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {credenciales.map((c) => (
-              <div
-                key={c.rol}
-                className="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 font-mono"
-              >
-                <p className="text-xs text-blue-500 font-semibold mb-3 not-italic">{c.rol}</p>
+              <div key={c.rol} className="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 font-mono">
+                <p className="text-xs text-blue-500 font-semibold mb-3">{c.rol}</p>
                 <p className="text-sm text-gray-600 dark:text-gray-400">{c.email}</p>
                 <p className="text-sm text-gray-500 dark:text-gray-500">{c.password}</p>
               </div>
@@ -289,9 +310,9 @@ export default function CitaProPage() {
         {/* CTA Final */}
         <section className="max-w-5xl mx-auto px-6">
           <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-10 text-center shadow-lg">
-            <h2 className="text-2xl font-bold text-white mb-3">¿Te interesa CitaPro?</h2>
+            <h2 className="text-2xl font-bold text-white mb-3">¿Tu consultorio necesita SigemPro?</h2>
             <p className="text-blue-100 mb-8 text-sm">
-              Puedo adaptarlo a las necesidades de tu consultorio.
+              Estamos abriendo un programa piloto para consultorios que deseen modernizar su operación.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               
@@ -302,10 +323,7 @@ export default function CitaProPage() {
               >
                 Ver demo
               </a>
-              <Link
-                href="/#contacto"
-                className="px-6 py-3 border border-white/40 text-white hover:bg-white/10 font-medium rounded-lg transition-colors"
-              >
+              <Link href="/#contacto" className="px-6 py-3 border border-white/40 text-white hover:bg-white/10 font-medium rounded-lg transition-colors">
                 Contactarme
               </Link>
             </div>

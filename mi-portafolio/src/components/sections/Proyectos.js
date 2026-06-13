@@ -107,14 +107,14 @@ function CitaProCard() {
       {/* Imagen con overlay */}
       <div className="relative w-full h-52 overflow-hidden bg-gray-100 dark:bg-gray-900">
         <Image
-          src="/medi-citas.png"
-          alt="CitaPro Dashboard"
+          src="/sigempro.png"
+          alt="SigemPro Dashboard"
           fill
           className="object-contain p-2 transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-blue-600/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-
-          <a href="https://tu-url-render.com"
+          
+          <a  href="https://tu-url-render.com"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-5 py-2.5 bg-white text-blue-600 font-semibold rounded-lg text-sm shadow-lg hover:bg-blue-50 transition-colors"
@@ -132,19 +132,18 @@ function CitaProCard() {
         <div className="flex items-center gap-2 mb-3">
           <span className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 bg-green-50 dark:bg-green-500/10 text-green-600 dark:text-green-400 rounded-full border border-green-200 dark:border-green-500/20">
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-            Sistema real • Gestión clínica
+            SaaS · Multi-tenancy · Piloto abierto
           </span>
         </div>
 
         {/* Título */}
         <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1 group-hover:text-blue-500 transition-colors">
-          {/* Sistema de gestión clínica */}
-          CitaPro — Gestión clínica para consultorios
+          SigemPro — Gestión clínica para consultorios
         </h3>
 
         {/* Descripción */}
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">
-          Plataforma fullstack con roles, dashboard dinámico y automatización de citas, diseñada para optimizar la gestión de consultorios.
+          Plataforma SaaS multi-tenancy para consultorios médicos y odontológicos con historias clínicas, agenda y facturación.
         </p>
 
         {/* Métricas */}
@@ -154,7 +153,7 @@ function CitaProCard() {
             <p className="text-xs text-gray-400">Roles</p>
           </div>
           <div className="text-center border-x border-gray-200 dark:border-gray-600">
-            <p className="text-base font-bold text-gray-900 dark:text-white">7+</p>
+            <p className="text-base font-bold text-gray-900 dark:text-white">9+</p>
             <p className="text-xs text-gray-400">Módulos</p>
           </div>
           <div className="text-center">
@@ -174,8 +173,8 @@ function CitaProCard() {
 
         {/* Botones */}
         <div className="flex gap-3 mt-auto">
-
-          <a href="https://software-citas-medicas.onrender.com/"
+          
+          <a  href="https://tu-url-render.com"
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 flex items-center justify-center gap-2 text-sm px-4 py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors"
@@ -184,7 +183,7 @@ function CitaProCard() {
             Ver demo
           </a>
           <Link
-            href="/proyectos/citapro"
+            href="/proyectos/sigempro"
             className="flex-1 flex items-center justify-center gap-2 text-sm px-4 py-2.5 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-500 dark:hover:border-blue-500 dark:hover:text-blue-500 rounded-lg font-medium transition-colors"
           >
             Ver más

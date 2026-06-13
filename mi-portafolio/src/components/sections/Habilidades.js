@@ -5,7 +5,7 @@ import {
   SiHtml5, SiCss, SiJavascript, SiReact,
   SiNextdotjs, SiLaravel, SiFastapi,
   SiMysql, SiPostgresql, SiGit, SiGithub,
-  SiTailwindcss
+  SiTailwindcss, SiDocker 
 } from 'react-icons/si';
 
 const categorias = [
@@ -39,6 +39,7 @@ const categorias = [
     habilidades: [
       { nombre: "Git", icono: SiGit, color: "text-orange-600" },
       { nombre: "GitHub", icono: SiGithub, color: "text-gray-900 dark:text-white" },
+      { nombre: "Docker", icono: SiDocker, color: "text-sky-500" },
     ],
   },
 ];
