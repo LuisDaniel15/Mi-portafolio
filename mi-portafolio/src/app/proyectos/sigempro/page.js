@@ -11,47 +11,82 @@ const funcionalidades = [
   {
     icono: "👥",
     titulo: "Gestión de pacientes",
-    items: ["Registro completo de pacientes", "Historial de información", "Búsqueda rápida por nombre o documento"],
+    items: [
+      "Registro completo con datos clínicos, documento, EPS, tipo de afiliado y contacto de emergencia",
+      "Búsqueda rápida por nombre completo o documento",
+      "Antecedentes médicos y odontológicos independientes por paciente",
+    ],
+  },
+  {
+    icono: "👤",
+    titulo: "Portal del paciente",
+    items: [
+      "Acceso web seguro para consultar citas programadas",
+      "Descarga de documentos clínicos",
+      "Agendamiento de nuevas citas según disponibilidad",
+    ],
   },
   {
     icono: "📅",
-    titulo: "Agenda del profesional",
-    items: ["Visualización de citas", "Organización diaria de la atención", "Control de disponibilidad"],
+    titulo: "Agenda profesional",
+    items: [
+      "Visualización diaria y semanal con filtro por profesional",
+      "Control de disponibilidad con horarios configurables",
+      "Gestión de recesos y excepciones",
+    ],
   },
   {
     icono: "🗓️",
     titulo: "Programación de citas",
-    items: ["Creación y seguimiento de citas", "Estados de atención", "Gestión de cancelaciones"],
-  },
-  {
-    icono: "🕐",
-    titulo: "Gestión de horarios",
-    items: ["Configuración de horarios por profesional", "Control de disponibilidad"],
+    items: [
+      "Creación, confirmación, reagendamiento y cancelación",
+      "Verificación automática de disponibilidad en tiempo real",
+      "Recordatorios por correo 24h antes de la cita",
+    ],
   },
   {
     icono: "🩺",
-    titulo: "Historias clínicas digitales",
-    items: ["Registro clínico organizado", "Acceso rápido a información del paciente", "Historia clínica con ordinograma FDI"],
+    titulo: "Historia clínica digital",
+    items: [
+      "Registro completo: motivo, examen físico, signos vitales, diagnóstico CIE-10, plan y medicamentos",
+      "Odontograma FDI con estado por diente, superficies, procedimiento y material",
+    ],
   },
   {
     icono: "📂",
-    titulo: "Documentos médicos",
-    items: ["Generación de historia clínica", "Fórmula de medicamentos", "Almacenamiento centralizado"],
+    titulo: "Documentos clínicos",
+    items: [
+      "Generación de historia clínica en PDF",
+      "Receta médica con firma digital del profesional",
+      "Almacenamiento seguro en la nube por paciente",
+    ],
   },
   {
     icono: "🧾",
-    titulo: "Facturación local",
-    items: ["Registro y gestión de facturas", "Control administrativo básico"],
+    titulo: "Facturación electrónica",
+    items: [
+      "Emisión de Factura Electrónica de Venta (FEV) avalada por la DIAN vía Factus",
+      "Compatible con operación SS-SinAporte para consultorios particulares",
+      "Descarga del PDF de la factura validada",
+    ],
+  },
+  {
+    icono: "💳",
+    titulo: "Cartera y pagos",
+    items: [
+      "Gestión de pagos parciales para procedimientos de alto costo",
+      "Registro de abonos con historial completo",
+      "Control de saldo pendiente y estado del plan de pago",
+    ],
   },
   {
     icono: "📊",
     titulo: "Dashboard administrativo",
-    items: ["Citas del día y pacientes registrados", "Citas atendidas y canceladas", "Actividad general del consultorio"],
-  },
-  {
-    icono: "🔔",
-    titulo: "Recordatorios automáticos",
-    items: ["Envío automático por correo electrónico", "Recordatorios antes de cada cita"],
+    items: [
+      "Citas del día y pacientes registrados",
+      "Citas atendidas y canceladas",
+      "Indicadores en tiempo real de la actividad del consultorio",
+    ],
   },
 ];
 
@@ -70,9 +105,9 @@ const paraQuien = [
 ];
 
 const tecnologias = [
-  { area: "Frontend", stack: "Next.js + Tailwind CSS" },
+  { area: "Frontend", stack: "React js + Tailwind CSS" },
   { area: "Backend", stack: "Laravel" },
-  { area: "Base de datos", stack: "PostgreSQL / MySQL" },
+  { area: "Base de datos", stack: "PostgreSQL" },
   { area: "Autenticación", stack: "Sistema de roles y control de acceso" },
   { area: "Notificaciones", stack: "Emails automatizados" },
   { area: "Arquitectura", stack: "Multi-tenancy" },
@@ -104,8 +139,8 @@ export default function SigemProPage() {
             <ArrowLeft size={16} />
             Volver al portafolio
           </Link>
-          
-          <a  href="https://tu-url-render.com"
+
+          <a href="https://tu-url-render.com"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors"
@@ -135,8 +170,8 @@ export default function SigemProPage() {
             de sus pacientes, centralizar la información clínica y optimizar los procesos administrativos del día a día.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            
-            <a  href="https://tu-url-render.com"
+
+            <a href="https://tu-url-render.com"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors"
@@ -180,7 +215,7 @@ export default function SigemProPage() {
                 "Procesos administrativos lentos",
                 "Falta de indicadores para tomar decisiones",
               ].map((p) => (
-                <div key={p} className="flex items-start gap-2 p-3 bg-white dark:bg-gray-800 rounded-lg border border-blue-100 dark:border-blue-500/20">
+                <div key={p} className="flex items-center gap-2 p-3 bg-white dark:bg-gray-800 rounded-lg border border-blue-100 dark:border-blue-500/20">
                   <span className="text-red-400 mt-0.5 shrink-0">✕</span>
                   <p className="text-xs text-gray-600 dark:text-gray-400">{p}</p>
                 </div>
@@ -213,14 +248,14 @@ export default function SigemProPage() {
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white">🚀 Funcionalidades</h2>
             <div className="mt-3 w-12 h-1 bg-blue-500 rounded"></div>
           </div>
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-2 gap-5">
             {funcionalidades.map((f) => (
               <div key={f.titulo} className="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-colors">
                 <span className="text-2xl mb-3 block">{f.icono}</span>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">{f.titulo}</h3>
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-base">{f.titulo}</h3>
                 <ul className="space-y-1">
                   {f.items.map((item) => (
-                    <li key={item} className="text-xs text-gray-500 dark:text-gray-400 flex items-start gap-2">
+                    <li key={item} className="text-sm text-gray-500 dark:text-gray-400 flex items-start gap-2">
                       <span className="text-blue-500 mt-0.5">•</span>
                       {item}
                     </li>
@@ -285,7 +320,7 @@ export default function SigemProPage() {
           <div className="mt-4 p-4 bg-yellow-50 dark:bg-yellow-500/10 rounded-xl border border-yellow-200 dark:border-yellow-500/20">
             <p className="text-xs text-yellow-700 dark:text-yellow-400 leading-relaxed">
               ⚠️ El sistema de envío de correos funciona completamente en entorno local mediante workers.
-              En el despliegue en Render (plan gratuito), esta funcionalidad se encuentra limitada.
+              En el despliegue en la demostracion, esta funcionalidad se encuentra limitada.
             </p>
           </div>
         </section>
@@ -315,8 +350,8 @@ export default function SigemProPage() {
               Estamos abriendo un programa piloto para consultorios que deseen modernizar su operación.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              
-              <a  href="https://tu-url-render.com"
+
+              <a href="https://tu-url-render.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-white text-blue-500 hover:bg-blue-50 font-medium rounded-lg transition-colors"
